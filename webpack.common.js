@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "src/index.js"),
+  entry: { bundle: "./src/index.js" },
 
   output: {
     filename: "[name].js",
@@ -17,22 +17,31 @@ module.exports = {
         use: ["babel-loader", "eslint-loader"],
         exclude: [/node_modules/],
       },
+
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.(s[ac]ss|css)$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+
+      {
+        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        loader: "file-loader",
       },
     ],
   },
 
-  // devServer: {
-  //   contentBase: path.resolve(__dirname, "dist"),
-  // },
+  devServer: {
+    port: 4000,
+    open: true,
+    index: "index.html",
+    watchContentBase: false,
+  },
 
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Electric Bill printer",
-      // template: path.resolve(__dirname, "index.html"),
+      template: path.resolve(__dirname, "index.html"),
       meta: [
         {
           name: "description",
@@ -43,9 +52,10 @@ module.exports = {
   ],
 
   resolve: {
-    // extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx"],
     alias: {
-      _components: path.resolve(__dirname, "./src/components"),
+      _components: path.resolve(__dirname, "src/components/"),
+      _assets: path.resolve(__dirname, "src/assets/"),
     },
   },
 };

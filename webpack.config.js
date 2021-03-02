@@ -5,6 +5,7 @@ const devServer = {
   port: 4000,
   open: true,
   index: "index.html",
+  // watchContentBase: false,
 };
 
 const VENDOR_LIBS = ["react", "react-dom"];
@@ -17,7 +18,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
   },
   module: {
@@ -34,10 +35,10 @@ module.exports = {
       {
         use: [
           {
-            loader: "url-loader",
+            loader: "file-loader",
           },
           {
-            loader: "file-loader",
+            loader: "url-loader",
           },
         ],
         test: /\.(png|jpg|jpeg|svg|gif)$/,

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "start": "webpack serve --open --config webpack.config.js"
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --open --config webpack.dev.js"
   },
   "author": "myngan",
   "license": "ISC",
@@ -31,6 +31,7 @@
     "html-webpack-template": "^6.2.0",
     "mini-css-extract-plugin": "^1.3.8",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
