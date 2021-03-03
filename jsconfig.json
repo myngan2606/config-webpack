@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      // "_api": ["src/api/index"],
+      "_api/*": ["src/api/*"],
+      // "_util": ["src/util/index"],
+      "_util/*": ["src/util/*"],
+      // "_i18n": ["src/i18n/index"],
+      "_i18n/*": ["src/i18n/*"],
+      // "_hooks": ["src/hooks/index"],
+      "_hooks/*": ["src/hooks/*"],
+      // "_style": ["src/style/index"],
+      "_style/*": ["src/style/*"],
+      // "_store": ["src/store/index"],
+      "_store/*": ["src/store/*"],
+      // "_route": ["src/route/index"],
+      "_route/*": ["src/route/*"],
+      // "_layout": ["src/layout/index"],
+      "_layout/*": ["src/layout/*"],
+      // "_module": ["src/module/index"],
+      "_module/*": ["src/module/*"],
+      // "_static": ["public/static/index"],
+      "_static/*": ["public/static/*"],
+      // "_constants": ["src/constants/index"],
+      "_constants/*": ["src/constants/*"],
+      // "_components": ["src/components/index"],
+      "_components/*": ["src/components/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

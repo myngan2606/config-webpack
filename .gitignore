@@ -1,6 +1,8 @@
 # dependencies
 /node_modules
 
+# configuration
+.env
 
 # production
 /dist
